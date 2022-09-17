@@ -3,14 +3,14 @@
 	<head>
 		<title>Maze!</title>
 		<link href="game.css" type="text/css" rel="stylesheet" />
-		<!--<script src="game.js" type="text/javascript"></script> -->
+		<script src="game.js" type="text/javascript"></script>
 	</head>
 
 	<body>
 		<h1>The Amazing Mouse Game!</h1>
 		<h2 id="status">Begin by moving your mouse over the "S".</h2>
 		<div id="game">
-			<div id="start">S</div>
+			<div id="start" onmouseenter="move(e)">S</div>
 			<div class="boundary" id="boundary1"></div>
 			<div class="boundary"></div>
 			<div class="boundary"></div>
@@ -25,7 +25,6 @@
 		<p>
 			Good luck
 		</p>
-		<script src="game.js" type="text/javascript"></script>
 	</body>
 </html>
 
