@@ -1,10 +1,14 @@
-
 window.onload = () => {
+	document.getElementById("start").onmouseover = MouseEnter;
+	
+function MouseEnter(){
 const startButton = document.getElementById("start");
 //Still have to make sure of moving with mouse!
 document.addEventListener('click', function(e) {
 	restartGame();
 });
+
+
 document.addEventListener('mousemove', function(e){
 	const x = e.clientX - 450;
 	const y = e.clientY- 150;
@@ -37,4 +41,5 @@ if(check === "boundary") {
 function restartGame(){
 	document.location.reload();
 }; 
+	}
 }
