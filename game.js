@@ -8,13 +8,11 @@ document.addEventListener('click', function(e) {
 	restartGame();
 });
 
-
 document.addEventListener('mousemove', function(e){
 	const x = e.clientX - 450;
 	const y = e.clientY - 150;
 	startButton.style.left = x + "px";
 	startButton.style.top = y + "px";
-console.log(e.clientX);
 let check = e.target.classList.value;
 const end = document.getElementById("end");
 const position = end.getBoundingClientRect();
@@ -44,14 +42,16 @@ if(check === "boundary") {
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#FFA500";
 	}
-	msg.innerText = "Nice try, the only way is forward!";
-	msg.style.color= "#FF0000";
-	MouseEnter();
+	msg.innerText = "Nice try, why are you trying to escape!? :)";
+	msg.style.color= "#FFA500";
+	
 }
 });
 
 function restartGame(){
 	document.location.reload();
 }; 
+
 	}
 }
+

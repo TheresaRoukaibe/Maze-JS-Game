@@ -2,19 +2,18 @@ window.onload = () => {
 	document.getElementById("start").onmouseover = MouseEnter;
 	
 function MouseEnter(){
+let active = 1;
 const startButton = document.getElementById("start");
 //Still have to make sure of moving with mouse!
 document.addEventListener('click', function(e) {
 	restartGame();
 });
-
-
+if(active == 1){
 document.addEventListener('mousemove', function(e){
 	const x = e.clientX - 450;
 	const y = e.clientY - 150;
 	startButton.style.left = x + "px";
 	startButton.style.top = y + "px";
-console.log(e.clientX);
 let check = e.target.classList.value;
 const end = document.getElementById("end");
 const position = end.getBoundingClientRect();
@@ -32,26 +31,30 @@ if(check === "boundary") {
 	}
 	msg.innerText = "You lost :( Stop touching walls !";
 	msg.style.color= "#FF0000";
-	
+	active = 0;
 }else if(xStart === xEnd){
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#00FF00";
 	}
 	msg.innerText = "You Win :) Congratulations !";
 	msg.style.color= "#00FF00";
-	
+	active = 0;
 }else if(xStart < 400 || xStart > 950){
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#FFA500";
 	}
-	msg.innerText = "Nice try, the only way is forward!";
-	msg.style.color= "#FF0000";
-	restartGame();
+	msg.innerText = "Nice try, why are you trying to escape!? :)";
+	msg.style.color= "#FFA500";
+	active = 0;
 }
 });
 
 function restartGame(){
 	document.location.reload();
 }; 
+}else if (active == 0){
+	alert("Let's try again");
+}
 	}
 }
+
