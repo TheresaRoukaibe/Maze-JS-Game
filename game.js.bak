@@ -9,15 +9,22 @@ document.addEventListener('mousemove', function(e){
 	startButton.style.top = y + "px";
 
 let check = e.target.classList.value;
+const end = document.getElementById("end");
+const position = end.getBoundingClientRect();
+const xEnd = position.left;
+const yEnd = position.top;
+const divs = document.getElementsByClassName("boundary");
 if(check === "boundary") {
-	const divs = document.getElementsByClassName("boundary");
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#FF0000";
 	}
 	const msg = document.getElementById("status");
-	msg.innerText = "You lost :(";
-	msg.style.backgroundColor= "#FF0000";
+	msg.innerText = "You lost :( Stop touching walls !";
+	msg.style.color= "#FF0000";
 	
+}else if(e.clientX == xEnd || e.clientY == yEnd){
+	const msg = document.getElementById("status");
+	msg.innerText = "You Win :( Congratulations !";
 }
 });
 
