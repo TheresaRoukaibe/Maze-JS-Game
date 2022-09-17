@@ -1,13 +1,15 @@
 window.onload = () => {
+	
 	document.getElementById("start").onmouseover = MouseEnter;
 	
+	
 function MouseEnter(){
+	
 const startButton = document.getElementById("start");
 //Still have to make sure of moving with mouse!
 document.addEventListener('click', function(e) {
 	restartGame();
 });
-
 document.addEventListener('mousemove', function(e){
 	const x = e.clientX - 450;
 	const y = e.clientY - 150;
@@ -30,13 +32,14 @@ if(check === "boundary") {
 	}
 	msg.innerText = "You lost :( Stop touching walls !";
 	msg.style.color= "#FF0000";
-	
+	this.removeEventListener('mousemove', arguments.callee);
 }else if(xStart === xEnd){
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#00FF00";
 	}
 	msg.innerText = "You Win :) Congratulations !";
 	msg.style.color= "#00FF00";
+	this.removeEventListener('mousemove', arguments.callee);
 	
 }else if(xStart < 400 || xStart > 950){
 	for(let i =0; i <divs.length; ++i){
@@ -44,14 +47,18 @@ if(check === "boundary") {
 	}
 	msg.innerText = "Nice try, why are you trying to escape!? :)";
 	msg.style.color= "#FFA500";
+	this.removeEventListener('mousemove', arguments.callee);
 	
 }
 });
 
-function restartGame(){
+	}
+	
+	function restartGame(){
 	document.location.reload();
 }; 
 
-	}
+
+
 }
 
