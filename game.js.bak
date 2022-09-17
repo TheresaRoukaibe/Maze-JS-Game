@@ -1,5 +1,4 @@
 //Make start button follow the mouse 
-window.onload = () => {
 var startButton = document.getElementById("start");
 document.addEventListener('mousemove', function(e){
 	var x = e.clientX;
@@ -8,4 +7,3 @@ document.addEventListener('mousemove', function(e){
 	startButton.style.top = y + "px";
 }
 );
-}
