@@ -1,8 +1,15 @@
 function signUp(e) {
+const crypto = require('crypto'),
+hash = crypto.getHashes();
+
 	event.preventDefault();
 	var uName = document.getElementById("email").value;
 	var uPass = document.getElementById("pass").value;
 	var points = 0;
+	
+	hashPwd = crypto.createHash('sha256')
+    .update(uPass)
+    .digest('hex');
 	
 	var user = {
 		username: uName,
@@ -23,9 +30,10 @@ function signUp(e) {
 
 function signIn(e) {
 	event.preventDefault();
-	var uName = document.getElementById("email").value;
-	var uPass = document.getElementById("pass").value;
+	var uName = document.getElementById("email2").value;
+	var uPass = document.getElementById("pass2").value;
 	var user =JSON.parse(localStorage.getItem('user'));
+	console.log(uName);
 	
 if(user.username == null){
 	alert("No account found. Please Sign Up first!");
