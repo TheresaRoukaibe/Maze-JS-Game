@@ -1,0 +1,27 @@
+/*function logIn(){
+	const InEmail = document.getElementById("email").value;
+	const InPass = document.getElementById("pass").value;
+	
+	var localEmail=localStorage.getItem("userEmail");
+	var localPass=localStorage.getItem("userPassword");
+	
+	if(inEmail == localEmail){
+		if(InPass == localPass){
+			alert("Log in Successful");
+		}else{
+			alert("Wrong Password. Try again!");
+		}
+	}else{
+		alert("Please register first!");
+	}
+}*/
+
+function Register(){
+	const InEmail = document.getElementById("email").value;
+	const InPass = document.getElementById("pass").value;
+	
+		localStorage.setItem("userEmail", InEmail);
+	    localStorage.setItem("userPassword", InPass);
+		alert("Registration Successful");
+	}
+
