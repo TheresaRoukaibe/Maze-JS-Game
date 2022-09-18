@@ -27,10 +27,15 @@
 </div>
 	<script>
 	function register(){
+	var person = JSON.parse(localStorage.getItem('user_info.user');
 	const userEmail = document.getElementById('email').value;
 	const userPass = document.getElementById('pass').value;
 	var user_info = {'user': userEmail, 'password': userPass};
+	if(userEmail == person.password){
+	alert("succes");
+	}else{
 	localStorage.setItem('user_info', JSON.stringify(user_info));
+	}
 }</script>
 </body> 
 </html> 

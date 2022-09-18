@@ -9,7 +9,7 @@
         <div id="bg"></div>
 		
 		<div align="center"> 
-<form class="container" align="center">
+<form class="container" align="center" method="POST" action="game.html">
 
   <div align="center">
     <input class="info" id="email" type="email" placeholder="Enter Email..." required/>
@@ -31,8 +31,6 @@
 	const userPass = document.getElementById('pass').value;
 	var user_info = {'user': userEmail, 'password': userPass};
 	localStorage.setItem('user_info', JSON.stringify(user_info));
-	document.location.href="file:///C:/Users/User/Desktop/Maze-JS-Game/game.html";
-	return false;
 }</script>
 </body> 
 </html> 
