@@ -1,9 +1,20 @@
-function register(){
-	const userEmail = document.getElementById('email').value;
-	const userPass = document.getElementById('pass').value;
-	var user_info = {'user': userEmail, 'password': userPassword, 'score' = 0};
-	localStorage.setItem('user_info', JSON.stringify(user_info));
-	window.location="game.html";
-}
+function signUp(e) {
+	event.preventDefault();
+	var uName = document.getElementById("email").value;
+	var uPass = document.getElementById("pass").value;
+	var points = 0;
+	
+	var user = {
+		username: uName,
+		passowrd: uPass,
+		score : points,
+	}; 
+	
+	var json = JSON.stringify(user);
+	localStorage.setItem(uName, json);
+		
+};
+
+
 
 

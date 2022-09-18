@@ -1,27 +1,20 @@
-/*function logIn(){
-	const InEmail = document.getElementById("email").value;
-	const InPass = document.getElementById("pass").value;
+function signUp(e) {
+	event.preventDefault();
+	var uName = document.getElementById("email").value;
+	var uPass = document.getElementById("pass").value;
+	var points = 0;
 	
-	var localEmail=localStorage.getItem("userEmail");
-	var localPass=localStorage.getItem("userPassword");
+	var user = {
+		username: uName,
+		passowrd: uPass,
+		score : points,
+	}; 
 	
-	if(inEmail == localEmail){
-		if(InPass == localPass){
-			alert("Log in Successful");
-		}else{
-			alert("Wrong Password. Try again!");
-		}
-	}else{
-		alert("Please register first!");
-	}
-}*/
+	var json = JSON.stringify(user);
+	localStorage.setItem(username, json);
+		
+};
 
-function Register(){
-	const InEmail = document.getElementById("email").value;
-	const InPass = document.getElementById("pass").value;
-	
-		localStorage.setItem("userEmail", InEmail);
-	    localStorage.setItem("userPassword", InPass);
-		alert("Registration Successful");
-	}
+
+
 

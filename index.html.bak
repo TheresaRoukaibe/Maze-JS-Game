@@ -9,7 +9,7 @@
         <div id="bg"></div>
 		
 		<div align="center"> 
-<form class="container" align="center" method="POST" action="game.html">
+<form class="container" align="center" onsubmit="signUp()">
 
   <div align="center">
     <input class="info" id="email" type="email" placeholder="Enter Email..." required/>
@@ -18,19 +18,15 @@
   <div align="center">
     <input class="info" id="pass" type="password" placeholder="Enter Password..." required/>                         </div>
   
+  
   <div class="logIn">
-    <button class="btn" onclick="register()" type="submit">Log in</button>
+    <button class="btn" type="submit" onclick="signUp">Sign Up</button>
   </div>
+ 
  
   
 </form>
 </div>
-	<script>
-	function register(){
-	const userEmail = document.getElementById('email').value;
-	const userPass = document.getElementById('pass').value;
-	var user_info = {'user': userEmail, 'password': userPass};
-	localStorage.setItem('user_info', JSON.stringify(user_info));
-}</script>
+<script src="logInInfos.js" type="text/javascript"></script>
 </body> 
 </html> 
