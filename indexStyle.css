@@ -27,6 +27,17 @@ form {
 .container{
 	position:absolute;
 	right:500;
+	top: 100;
+	margin: auto;
+	max-width: 300px;
+	padding: 16px;
+	background-color: white;
+	 align-items: center;
+}
+
+.container2{
+	position:absolute;
+	right:500;
 	top: 250;
 	margin: auto;
 	max-width: 300px;
