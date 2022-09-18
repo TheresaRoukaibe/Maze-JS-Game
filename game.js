@@ -1,7 +1,7 @@
 window.onload = () => {
-	
+	var user = JSON.parse(window.localStorage.getItem("user"));
+	var score = user.score;
 	document.getElementById("start").onmouseover = MouseEnter;
-	
 function MouseEnter(){
 	
 const startButton = document.getElementById("start");
@@ -9,6 +9,7 @@ const startButton = document.getElementById("start");
 document.addEventListener('click', function(e) {
 	restartGame();
 });
+
 document.addEventListener('mousemove', function(e){
 	const x = e.clientX - 450;
 	const y = e.clientY - 150;
@@ -31,7 +32,9 @@ if(check === "boundary") {
 	msg.innerText = "You lost :( Stop touching walls ! Click on S to play again";
 	msg.style.color= "#FF0000";
 	this.removeEventListener('mousemove', arguments.callee);
-	
+	user.score = score -10;
+	alert("WOOPS, look at your score: " + user.score);
+	window.localStorage.setItem("user", JSON.stringify(user));
 }else if(xStart === xEnd){
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#00FF00";
@@ -39,7 +42,9 @@ if(check === "boundary") {
 	msg.innerText = "You Win :) Congratulations ! Click on S to play again";
 	msg.style.color= "#00FF00";
 	this.removeEventListener('mousemove', arguments.callee);
-	
+	user.score = score + 5;
+	alert("YAY! Five more point, your new score: " + user.score);
+	window.localStorage.setItem("user", JSON.stringify(user));
 }else if(xStart < 400 || xStart > 950){
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#FFA500";

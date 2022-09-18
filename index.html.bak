@@ -28,11 +28,11 @@
 <form class="container2" align="center" onsubmit="signIn()">
 
   <div align="center">
-    <input class="info" id="email" type="email" placeholder="Enter Your Email..." required/>
+    <input class="info" id="email2" type="email" placeholder="Enter Your Email..." required/>
   </div>
   
   <div align="center">
-    <input class="info" id="pass" type="password" placeholder="Enter Your Password..." required/>                         </div>
+    <input class="info" id="pass2" type="password" placeholder="Enter Your Password..." required/>                         </div>
   
   
   <div class="logIn">
