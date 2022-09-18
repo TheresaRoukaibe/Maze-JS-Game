@@ -2,7 +2,6 @@ window.onload = () => {
 	
 	document.getElementById("start").onmouseover = MouseEnter;
 	
-	
 function MouseEnter(){
 	
 const startButton = document.getElementById("start");
@@ -20,7 +19,6 @@ const end = document.getElementById("end");
 const position = end.getBoundingClientRect();
 const xEnd = position.left;
 const yEnd = position.top;
-
 const positionS = startButton.getBoundingClientRect();
 const xStart = positionS.left;
 const yStart = positionS.top;
@@ -30,14 +28,15 @@ if(check === "boundary") {
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#FF0000";
 	}
-	msg.innerText = "You lost :( Stop touching walls !";
+	msg.innerText = "You lost :( Stop touching walls ! Click on S to play again";
 	msg.style.color= "#FF0000";
 	this.removeEventListener('mousemove', arguments.callee);
+	
 }else if(xStart === xEnd){
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#00FF00";
 	}
-	msg.innerText = "You Win :) Congratulations !";
+	msg.innerText = "You Win :) Congratulations ! Click on S to play again";
 	msg.style.color= "#00FF00";
 	this.removeEventListener('mousemove', arguments.callee);
 	
@@ -45,7 +44,7 @@ if(check === "boundary") {
 	for(let i =0; i <divs.length; ++i){
 		divs[i].style.backgroundColor= "#FFA500";
 	}
-	msg.innerText = "Nice try, why are you trying to escape!? :)";
+	msg.innerText = "Nice try, why are you trying to escape!? :) Click on S to try again";
 	msg.style.color= "#FFA500";
 	this.removeEventListener('mousemove', arguments.callee);
 	
@@ -57,6 +56,7 @@ if(check === "boundary") {
 	function restartGame(){
 	document.location.reload();
 }; 
+
 
 
 
